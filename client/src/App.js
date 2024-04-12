@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const App = () => {
@@ -22,11 +23,11 @@ const appRouter = createBrowserRouter([
       { path: "/", element: <Body /> },
       {
         path: "/login",
-        element: <Login/>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <h1>Register</h1>,
+        element: <Register />,
       },
       // { path: "/contact", element: <Contact /> },
       // {

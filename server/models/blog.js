@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const User = require("./user.js");
 
 const blogSchema = mongoose.Schema({
   title: {
@@ -10,14 +11,11 @@ const blogSchema = mongoose.Schema({
     default: Date.now(),
     required: true,
   },
-  title: {
-    type: String,
-    required: true,
-  },
   description: {
     type: String,
     required: true,
   },
+  user: [{ type: Schema.Types.ObjectId, ref: "User" }],
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
