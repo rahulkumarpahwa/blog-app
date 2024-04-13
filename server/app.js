@@ -2,11 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const User = require("./models/user.js");
+const bcrypt = require("bcrypt");
+const dotenv = require("dotenv");
 const app = express();
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/blog-app");
@@ -27,7 +31,7 @@ app.post("/register", async (req, res) => {
     const newUser = new User({
       email,
       username,
-      password,
+      password: bcrypt.hashSync(password, bcrypt.genSaltSync(process.env.SALT)),
     });
     await newUser.save();
     res.redirect("http://localhost:1234/login");
