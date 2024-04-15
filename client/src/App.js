@@ -9,6 +9,7 @@ import Create from "./components/Create";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ShowPost from "./components/ShowPost";
 import Edit from "./components/Edit";
+import About from "./components/About";
 
 const App = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -38,16 +39,9 @@ const appRouter = createBrowserRouter([
         element: <Register />,
       },
       { path: "/create", element: <Create /> },
-      // {
-      //   path: "/grocery",
-      //   element: (
-      //     <Suspense fallback={<h1>Loading!!!</h1>}>
-      //       <Grocery />
-      //     </Suspense>
-      //   ),
-      // },
       { path: "/post/:id", element: <ShowPost /> },
       { path: "/edit/:id", element: <Edit /> },
+      { path: "/about", element: <About /> },
     ],
     // errorElement: <Error />,
   },

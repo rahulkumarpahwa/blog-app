@@ -60,23 +60,24 @@ const Edit = () => {
     data.set("file", files);
     data.set("id", id);
 
-    if (title === "" || summary === "" || content === "") {
+    if (title != "" && summary != "" && content != "") {
       e.preventDefault();
-    } else {
       console.log(files);
       const response = await fetch(`http://localhost:4000/post`, {
         method: "PUT",
         body: data,
         credentials: "include",
       });
-
       if (response.ok) {
         // alert("Post created Successfully");
+        console.log(response);
         setRedirect(true);
       } else {
         alert("Something get wrong. Try again!");
       }
     }
+      
+    
   };
 
   // console.log(id);

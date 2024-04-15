@@ -46,16 +46,14 @@ const Create = () => {
     data.set("content", content);
     data.set("file", files);
 
-    if (title === "" || summary === "" || content === "") {
+    if (title != "" && summary != "" && content != "") {
       e.preventDefault();
-    } else {
       // console.log(files);
       const response = await fetch("http://localhost:4000/post", {
         method: "POST",
         body: data,
         credentials: "include",
       });
-
       if (response.ok) {
         // alert("Post created Successfully");
         setRedirect(true);

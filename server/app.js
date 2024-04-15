@@ -129,8 +129,9 @@ app.post("/post", upload.single("file"), async (req, res) => {
     });
     await newBlog.save();
     console.log(newBlog);
-    res.status(200).json("ok");
+    
   });
+  res.status(200).json("ok");
 });
 
 app.get("/post", async (req, res) => {
@@ -176,8 +177,9 @@ app.put("/post", upload.single("file"), async (req, res) => {
       image: image ? image : findPost.image,
     });
     console.log(updatedPost);
-    res.status(200).json("ok");
+    
   });
+  res.status(200).json("ok");
 });
 
 
