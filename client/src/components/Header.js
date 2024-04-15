@@ -14,6 +14,7 @@ const Header = () => {
       credentials: "include",
     });
     const json = await response.json();
+    // console.log(response);
     setUserInfo(json.username);
   };
 
@@ -40,8 +41,8 @@ const Header = () => {
               <li className="mx-4 hover:underline underline-offset-8">
                 <Link onClick={logout}>Logout</Link>
               </li>
-              <li className="mx-4 hover:underline underline-offset-8">
-                {userInfo}
+              <li className="mx-4 hover:underline underline-offset-8 font-black text-orange-400">
+                @{userInfo.toUpperCase()}
               </li>
             </div>
           ) : (
