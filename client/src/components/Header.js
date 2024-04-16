@@ -44,6 +44,9 @@ const Header = () => {
               <li className="mx-4 hover:underline underline-offset-8 font-black text-orange-400">
                 @{userInfo.toUpperCase()}
               </li>
+              <li className="mx-4 hover:underline underline-offset-8">
+                <Link to="/about">About</Link>
+              </li>
             </div>
           ) : (
             <div className="flex justify-evenly">
@@ -53,6 +56,9 @@ const Header = () => {
               </li>
               <li className="mx-4 hover:underline underline-offset-8">
                 <Link to="/register">Register</Link>
+              </li>
+              <li className="mx-4 hover:underline underline-offset-8">
+                <Link to="/about">About</Link>
               </li>
             </div>
           )}
